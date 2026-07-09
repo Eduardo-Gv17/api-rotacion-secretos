@@ -12,17 +12,11 @@ provider:
     role: arn:aws:iam::174510827120:role/LabRole
 
   environment:
-
     DB_HOST_PARAMETER: /rds_mysql_alumnos/punto_enlace
-
-    DB_ADMIN_USER: admin
-
-    DB_ADMIN_PASSWORD: MiClaveSegura123
 
 functions:
 
   rotarPasswords:
-
     handler: RotarPasswords.lambda_handler
 
     package:
@@ -30,9 +24,6 @@ functions:
         - ./**
 
     events:
-
       - schedule:
-
           rate: rate(10 minutes)
-
           enabled: true
