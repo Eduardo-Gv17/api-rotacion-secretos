@@ -108,3 +108,4 @@ def lambda_handler(event, context):
         }
 
     finally:
+        conexion.close()
